@@ -4,7 +4,9 @@
   <label>User Name:</label><input [(ngModel)]="userName" placeholder="name">
   <h2>Plugs</h2>
   <ul class="plugs">
-    <li *ngFor="let plug of plugs" (click)="onSelect(plug)">
+    <li *ngFor="let plug of plugs" 
+      [class.highlight]="plug === selectedPlug"
+      (click)="onSelect(plug)">
       <h5>plug: {{plug.description}}</h5>
     </li>
   </ul>
