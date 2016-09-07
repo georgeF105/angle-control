@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import '../../public/css/styles.css';
 import { Plug } from './plug';
-import { PlugCardComponent } from './plug-card.component';
 import { PlugService } from './plug.service';
 
 @Component({
@@ -20,7 +19,8 @@ export class AppComponent implements OnInit {
   constructor(private plugService: PlugService) { }
 
   getPlugs(): void {
-    this.plugs = this.plugService.getPlugs();
+    this.plugService.getPlugs()
+      .then(plugs => this.plugs = plugs);
   }
 
   ngOnInit(): void {

@@ -6,7 +6,7 @@ import { PLUGS } from './mock-plugs'
 @Injectable()
 
 export class PlugService {
-  getPlugs(): Plug[] {
-    return PLUGS;
+  getPlugs(): Promise<Plug[]> {
+    return Promise.resolve(PLUGS);
   }
 }
