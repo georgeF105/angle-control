@@ -3,7 +3,9 @@ import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { PlugsComponent } from './plugs.component';
 import { PlugCardComponent } from './plug-card.component';
+import { PlugService } from './plug.service';
 
 @NgModule({
   imports: [
@@ -12,7 +14,11 @@ import { PlugCardComponent } from './plug-card.component';
   ],
   declarations: [
     AppComponent,
+    PlugsComponent,
     PlugCardComponent
+  ],
+  providers: [
+    PlugService
   ],
   bootstrap: [ AppComponent ]
 })
