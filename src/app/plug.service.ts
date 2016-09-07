@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 
 import { Plug } from './plug';
-import { PLUGS } from './mock-plugs'
+import { PLUGS } from './mock-plugs';
 
 @Injectable()
 

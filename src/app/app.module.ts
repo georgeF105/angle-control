@@ -6,7 +6,10 @@ import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { PlugsComponent } from './plugs.component';
 import { PlugCardComponent } from './plug-card.component';
+import { AlarmsComponent } from './alarms.component';
+
 import { PlugService } from './plug.service';
+import { AlarmService } from './alarm.service';
 
 @NgModule({
   imports: [
@@ -17,10 +20,12 @@ import { PlugService } from './plug.service';
   declarations: [
     AppComponent,
     PlugsComponent,
-    PlugCardComponent
+    PlugCardComponent,
+    AlarmsComponent
   ],
   providers: [
-    PlugService
+    PlugService,
+    AlarmService
   ],
   bootstrap: [ AppComponent ]
 })
