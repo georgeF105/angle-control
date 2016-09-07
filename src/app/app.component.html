@@ -2,4 +2,15 @@
   <h1>{{message}}</h1>
   <h2>Hello {{userName}}</h2>
   <label>User Name:</label><input [(ngModel)]="userName" placeholder="name">
+  <h2>Plugs</h2>
+  <ul class="plugs">
+    <li *ngFor="let plug of plugs" (click)="onSelect(plug)">
+      <h5>plug: {{plug.description}}</h5>
+    </li>
+  </ul>
+  <div *ngIf="selectedPlug">
+    <h2>Selected Plug</h2>
+    <h4>Description: {{selectedPlug.description}}</h4>
+  </div>
 </main>
+
