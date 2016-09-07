@@ -1,8 +1,2 @@
-<h2>Hello {{userName}}</h2>
-<label>User Name:</label><input [(ngModel)]="userName" placeholder="name">
 <h2>Plugs</h2>
 <plug-card *ngFor="let plug of plugs" [plug]="plug" (click)="onSelect(plug)"></plug-card>
-<div *ngIf="selectedPlug">
-  <h2>Selected Plug</h2>
-  <h4>Description: {{selectedPlug.description}}</h4>
-</div>
