@@ -1,25 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import '../../public/css/styles.css';
 import { Plug } from './plug';
 import { PlugCardComponent } from './plug-card.component';
-
-const PLUGS: Plug[] = [
-  { id: 1, description: 'Down Lights', on: false},
-  { id: 2, description: 'Fan', on: false},
-  { id: 3, description: 'Kitchen Speakers', on: false}
-];
+import { PlugService } from './plug.service';
 
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [PlugService]
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   message = 'Hello World';
-  plugs = PLUGS;
+  plugs: Plug[];
   selectedPlug: Plug;
+
+  constructor(private plugService: PlugService) { }
+
+  getPlugs(): void {
+    this.plugs = this.plugService.getPlugs();
+  }
+
+  ngOnInit(): void {
+    this.getPlugs();
+  }
 
   onSelect(plug: Plug): void {
     this.selectedPlug = plug;
