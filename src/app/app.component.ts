@@ -1,15 +1,13 @@
 import { Component } from '@angular/core';
-import '../../public/css/styles.css';
 
-export class Plug {
-  id: number;
-  description: string;
-}
+import '../../public/css/styles.css';
+import { Plug } from './plug';
+import { PlugCardComponent } from './plug-card.component';
 
 const PLUGS: Plug[] = [
-  { id: 1, description: 'Down Lights'},
-  { id: 2, description: 'Fan'},
-  { id: 3, description: 'Kitchen Speakers'}
+  { id: 1, description: 'Down Lights', on: false},
+  { id: 2, description: 'Fan', on: false},
+  { id: 3, description: 'Kitchen Speakers', on: false}
 ];
 
 @Component({

@@ -13,6 +13,7 @@
   <div *ngIf="selectedPlug">
     <h2>Selected Plug</h2>
     <h4>Description: {{selectedPlug.description}}</h4>
+    <plug-card [plug]="selectedPlug"></plug-card>
   </div>
 </main>
 
