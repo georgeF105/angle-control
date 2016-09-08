@@ -11,4 +11,8 @@ import { Plug } from './plug';
 export class PlugCardComponent {
   @Input()
   plug: Plug;
+  isOn = false;
+  togglePlug() {
+    this.isOn = !this.isOn;
+  }
 }

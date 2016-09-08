@@ -2,10 +2,8 @@
   <div class="title">
     <h2>{{plug.description}}</h2>
   </div>
-  <div class="switch">
-    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-      <i class="material-icons">lightbulb_outline</i>
-    </button>
+  <div class="switch" (click)="togglePlug()">
+    <i class="material-icons bulb" [ngClass]="{on: isOn}">lightbulb_outline</i>
   </div>
   <div class="options">
   </div>
