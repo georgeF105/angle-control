@@ -13,6 +13,6 @@ export class PlugCardComponent {
   plug: Plug;
   isOn = false;
   togglePlug() {
-    this.isOn = !this.isOn;
+    this.plug.on = !this.plug.on;
   }
 }
