@@ -1,0 +1,10 @@
+<div class="alarm-card mdl-card mdl-shadow--2dp">
+  <div class="title">
+    <h2>{{alarm.alarmType}}</h2>
+  </div>
+  <div class="switch" (click)="toggleAlarm()">
+    <i class="material-icons bulb" [ngClass]="{on: alarm.on}">lightbulb_outline</i>
+  </div>
+  <div class="options">
+  </div>
+</div>
