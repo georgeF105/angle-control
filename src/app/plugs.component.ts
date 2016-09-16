@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import '../../public/css/styles.css';
 import { Plug } from './plug';
 import { PlugService } from './plug.service';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'my-plugs',
@@ -14,16 +15,15 @@ import { PlugService } from './plug.service';
 export class PlugsComponent implements OnInit {
   plugs: Plug[];
   selectedPlug: Plug;
+  public subscription: Subscription<Plug[]>;
 
   constructor(private plugService: PlugService) { }
 
-  getPlugs(): void {
-    this.plugService.getPlugs()
-      .then(plugs => this.plugs = plugs);
-  }
-
   ngOnInit(): void {
-    this.getPlugs();
+    this.subscription = this.plugService.getPlugs().subscribe(plugs => {
+      this.plugs = plugs
+      console.log('plugs in component', this.plugs)
+    })
   }
 
   onSelect(plug: Plug): void {
