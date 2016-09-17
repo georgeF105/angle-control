@@ -22,7 +22,7 @@ export class PlugService {
           return plug;
         })
         this.plugs = data;
-        observer.next(this.plugs);
+        observer.next(data);
       });
     });
   }
