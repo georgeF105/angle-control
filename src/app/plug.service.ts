@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core'
 import { Observable } from 'rxjs/Observable'
-import * as Firebase from 'firebase';
 
-import { firebaseConfig } from '../firebaseConfig'
+import { firebase } from '../firebaseConfig'
 import convertObjToArr from '../lib/convertObjToArr'
 import { Plug } from './plug';
 
@@ -12,7 +11,7 @@ export class PlugService {
   db: any;
   plugs: Plug[];
   constructor() {
-    this.db = Firebase.initializeApp(firebaseConfig)
+    this.db = firebase;
   }
   getPlugs(): Observable<Plug[]> {
     return Observable.create(observer => {
