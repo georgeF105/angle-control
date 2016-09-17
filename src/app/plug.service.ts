@@ -8,7 +8,6 @@ import { Plug } from './plug';
 @Injectable()
 
 export class PlugService {
-  plugs: Plug[];
   getPlugs(): Observable<Plug[]> {
     return Observable.create(observer => {
       firebase.database().ref('plugs').on('value', snapshot => {
@@ -21,7 +20,6 @@ export class PlugService {
           }
           return plug;
         })
-        this.plugs = data;
         observer.next(data);
       });
     });
