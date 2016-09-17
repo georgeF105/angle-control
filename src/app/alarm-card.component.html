@@ -5,16 +5,17 @@
   <div class="settings">
     <div class="type"><h3 class="type">{{alarm.alarmType}}</h3></div>
     <div class="days">
-      <button class="mdl-button mdl-js-button mdl-button--raised day">S</button>
-      <button class="mdl-button mdl-js-button mdl-button--raised day">M</button>
-      <button class="mdl-button mdl-js-button mdl-button--raised day">T</button>
-      <button class="mdl-button mdl-js-button mdl-button--raised day">W</button>
-      <button class="mdl-button mdl-js-button mdl-button--raised day">T</button>
-      <button class="mdl-button mdl-js-button mdl-button--raised day">F</button>
-      <button class="mdl-button mdl-js-button mdl-button--raised day">S</button>
+      <button class="mdl-button mdl-js-button mdl-button--raised day" [ngClass]="{on: alarm.sunday}" (click)="toggleDay('sunday')">S</button>
+      <button class="mdl-button mdl-js-button mdl-button--raised day" [ngClass]="{on: alarm.monday}" (click)="toggleDay('monday')">M</button>
+      <button class="mdl-button mdl-js-button mdl-button--raised day" [ngClass]="{on: alarm.tuesday}" (click)="toggleDay('tuesday')">T</button>
+      <button class="mdl-button mdl-js-button mdl-button--raised day" [ngClass]="{on: alarm.wednesday}" (click)="toggleDay('wednesday')">W</button>
+      <button class="mdl-button mdl-js-button mdl-button--raised day" [ngClass]="{on: alarm.thursday}" (click)="toggleDay('thursday')">T</button>
+      <button class="mdl-button mdl-js-button mdl-button--raised day" [ngClass]="{on: alarm.friday}" (click)="toggleDay('friday')">F</button>
+      <button class="mdl-button mdl-js-button mdl-button--raised day" [ngClass]="{on: alarm.saturday}" (click)="toggleDay('saturday')">S</button>
     </div>
   </div>
   <div class="switch" (click)="toggleAlarm()">
-    <i class="material-icons alarm" [ngClass]="{on: alarm.on}">alarm_on</i>
+    <i class="material-icons alarm" [ngClass]="{hide: !alarm.on}">alarm_on</i>
+    <i class="material-icons alarm" [ngClass]="{hide: alarm.on}">alarm_off</i>
   </div>
 </div>

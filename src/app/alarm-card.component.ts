@@ -15,4 +15,7 @@ export class AlarmCardComponent {
   toggleAlarm() {
     this.alarm.on = !this.alarm.on;
   }
+  toggleDay(day:string) {
+    this.alarm[day] = !this.alarm[day];
+  }
 }
