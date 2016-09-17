@@ -13,13 +13,21 @@ export class AlarmService {
     return Observable.create(observer => {
       firebase.database().ref('alarms').on('value', snapshot => {
         let data = convertObjToArr(snapshot.val());
-        data = data.map(plug => {
-          plug.toggle = () => {
+        data = data.map(alarm => {
+          alarm.toggle = () => {
             let updates = {};
-            updates['alarms/' + plug.id + '/on'] = !plug.on;
+            updates['alarms/' + alarm.id + '/on'] = !alarm.on;
             firebase.database().ref().update(updates);
           }
-          return plug;
+          return alarm;
+        })
+        data = data.map(alarm => {
+          alarm.toggleDay = (day:string) => {
+            let updates = {};
+            updates['alarms/' + alarm.id + '/' + day] = !alarm[day];
+            firebase.database().ref().update(updates);
+          }
+          return alarm;
         })
         observer.next(data);
       });

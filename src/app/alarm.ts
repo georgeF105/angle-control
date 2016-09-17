@@ -10,4 +10,6 @@ export class Alarm {
   saturday: boolean;
   sunday: boolean;
   on: boolean;
+  toggle() {};
+  toggleDay(day:string) {};
 }
