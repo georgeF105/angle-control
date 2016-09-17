@@ -1,4 +1,41 @@
 .alarm-card {
+  padding: 25px;
   justify-content: space-between;
+  align-items: center;
 }
 
+.time {
+  margin: 50px;
+}
+.type {
+  margin: 0px;
+}
+.settings {
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.days {
+  display: flex;
+  align-items: center;
+}
+
+.day {
+  padding: 0px;
+  margin: 3px;
+}
+.switch {
+  margin: 50px;
+}
+
+.alarm {
+  font-size: 60px;
+  color: #757575;
+}
+
+.on {
+  color: #FFDD1B;
+}

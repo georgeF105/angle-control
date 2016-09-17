@@ -15,13 +15,8 @@ export class AlarmsComponent implements OnInit {
   alarms: Alarm[];
   selectedAlarm: Alarm;
   public subscription: Subscription<Alarm[]>;
-  
-  constructor(private alarmService: AlarmService) { }
 
-  // getAlarms(): void {
-  //   this.alarmService.getAlarms()
-  //     .then(alarms => this.alarms = alarms);
-  // }
+  constructor(private alarmService: AlarmService) { }
 
   ngOnInit(): void {
     this.subscription = this.alarmService.getAlarms().subscribe(alarms => {

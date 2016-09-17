@@ -1,12 +1,20 @@
 <div class="alarm-card mdl-card mdl-shadow--2dp">
-  <div class='main-window'>
-    <div class="title">
-      <h2>{{alarm.alarmType}}</h2>
+  <div class="time">
+    <h2>{{alarm.time}}</h2>
+  </div>
+  <div class="settings">
+    <div class="type"><h3 class="type">{{alarm.alarmType}}</h3></div>
+    <div class="days">
+      <button class="mdl-button mdl-js-button mdl-button--raised day">S</button>
+      <button class="mdl-button mdl-js-button mdl-button--raised day">M</button>
+      <button class="mdl-button mdl-js-button mdl-button--raised day">T</button>
+      <button class="mdl-button mdl-js-button mdl-button--raised day">W</button>
+      <button class="mdl-button mdl-js-button mdl-button--raised day">T</button>
+      <button class="mdl-button mdl-js-button mdl-button--raised day">F</button>
+      <button class="mdl-button mdl-js-button mdl-button--raised day">S</button>
     </div>
   </div>
   <div class="switch" (click)="toggleAlarm()">
-    <i class="material-icons bulb" [ngClass]="{on: alarm.on}">{{alarm.on ? alarm_on : alarm_off}}</i>
-  </div>
-  <div class="options">
+    <i class="material-icons alarm" [ngClass]="{on: alarm.on}">alarm_on</i>
   </div>
 </div>
