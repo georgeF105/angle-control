@@ -1,4 +1,4 @@
-export default function convertObjToArr (objects) {
+export default function convertObjToArr (objects: Object) {
   let arr = [];
   for (let key in objects) {
     const object = objects[key];
