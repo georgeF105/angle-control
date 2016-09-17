@@ -14,16 +14,19 @@ import { AlarmService } from './alarm.service';
 export class AlarmsComponent implements OnInit {
   alarms: Alarm[];
   selectedAlarm: Alarm;
-
+  public subscription: Subscription<Alarm[]>;
+  
   constructor(private alarmService: AlarmService) { }
 
-  getAlarms(): void {
-    this.alarmService.getAlarms()
-      .then(alarms => this.alarms = alarms);
-  }
+  // getAlarms(): void {
+  //   this.alarmService.getAlarms()
+  //     .then(alarms => this.alarms = alarms);
+  // }
 
   ngOnInit(): void {
-    this.getAlarms();
+    this.subscription = this.alarmService.getAlarms().subscribe(alarms => {
+      this.alarms = alarms
+    })
   }
 
   onSelect(alarm: Alarm): void {
