@@ -4,7 +4,6 @@ import { Observable } from 'rxjs/Observable'
 import { firebase } from '../firebaseConfig'
 import convertObjToArr from '../lib/convertObjToArr'
 import { Alarm } from './alarm';
-import { ALARMS } from './mock-alarms';
 
 @Injectable()
 
