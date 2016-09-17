@@ -18,6 +18,14 @@ export class PlugService {
     return Observable.create(observer => {
       this.db.database().ref('plugs').on('value', snapshot => {
         let data = convertObjToArr(snapshot.val());
+        data = data.map(plug => {
+          plug.toggle = () => {
+            let updates = {};
+            updates['plugs/' + plug.id + '/on'] = !plug.on;
+            this.db.database().ref().update(updates);
+          }
+          return plug;
+        })
         this.plugs = data;
         observer.next(this.plugs);
       });
