@@ -28,6 +28,9 @@ export class AlarmService {
             updates['alarms/' + alarm.id + '/time'] = time;
             firebase.database().ref().update(updates);
           }
+          alarm.delete = () => {
+            firebase.database().ref('alarms/' + alarm.id).remove();
+          }
           return alarm;
         })
         observer.next(data);

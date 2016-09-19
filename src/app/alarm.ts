@@ -13,4 +13,5 @@ export class Alarm {
   toggle() {};
   toggleDay(day:string) {};
   updateTime(time:string) {};
+  delete() {};
 }

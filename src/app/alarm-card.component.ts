@@ -19,6 +19,9 @@ export class AlarmCardComponent {
   }
   updateTime(event:any) {
     const time = event.target.value;
-    this.alarm.updateTime(time)
+    this.alarm.updateTime(time);
+  }
+  deleteAlarm() {
+    this.alarm.delete();
   }
 }
