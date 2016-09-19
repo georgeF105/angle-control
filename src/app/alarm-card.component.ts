@@ -11,7 +11,6 @@ import { Alarm } from './alarm';
 export class AlarmCardComponent {
   @Input()
   alarm: Alarm;
-  settingTime = false;
   toggleAlarm() {
     this.alarm.toggle();
   }
