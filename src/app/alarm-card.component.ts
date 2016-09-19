@@ -11,11 +11,14 @@ import { Alarm } from './alarm';
 export class AlarmCardComponent {
   @Input()
   alarm: Alarm;
-  isOn = false;
+  settingTime = false;
   toggleAlarm() {
     this.alarm.toggle();
   }
   toggleDay(day:string) {
     this.alarm.toggleDay(day);
+  }
+  updateTime(event:any) {
+    console.log('time', event.target.value);
   }
 }

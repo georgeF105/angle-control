@@ -5,7 +5,23 @@
 }
 
 .time {
-  margin: 50px;
+  margin: 20px 50px;
+  display: flex;
+  align-items: center;
+}
+.time-input {
+  font-family: 'Roboto', sans-serif;
+  font-size: 42px;
+  border: none;
+}
+
+.time-input:focus {
+  border: none;
+}
+
+.digits {
+  width: 55px;
+  text-align: center;
 }
 .type {
   margin: 0px;

@@ -1,6 +1,6 @@
 <div class="alarm-card mdl-card mdl-shadow--2dp">
-  <div class="time">
-    <h2>{{alarm.time}}</h2>
+  <div class="time" (click)="settingTime = !settingTime">
+    <input class="time-input" type="time" value="{{alarm.time}}" (blur)="updateTime($event)"/>
   </div>
   <div class="settings">
     <div class="type"><h3 class="type">{{alarm.alarmType}}</h3></div>
