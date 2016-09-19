@@ -18,12 +18,14 @@ export class AlarmService {
             updates['alarms/' + alarm.id + '/on'] = !alarm.on;
             firebase.database().ref().update(updates);
           }
-          return alarm;
-        })
-        data = data.map(alarm => {
           alarm.toggleDay = (day:string) => {
             let updates = {};
             updates['alarms/' + alarm.id + '/' + day] = !alarm[day];
+            firebase.database().ref().update(updates);
+          }
+          alarm.updateTime = (time:string) => {
+            let updates = {};
+            updates['alarms/' + alarm.id + '/time'] = time;
             firebase.database().ref().update(updates);
           }
           return alarm;

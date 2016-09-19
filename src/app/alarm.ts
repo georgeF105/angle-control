@@ -12,4 +12,5 @@ export class Alarm {
   on: boolean;
   toggle() {};
   toggleDay(day:string) {};
+  updateTime(time:string) {};
 }

@@ -19,6 +19,7 @@ export class AlarmCardComponent {
     this.alarm.toggleDay(day);
   }
   updateTime(event:any) {
-    console.log('time', event.target.value);
+    const time = event.target.value;
+    this.alarm.updateTime(time)
   }
 }
