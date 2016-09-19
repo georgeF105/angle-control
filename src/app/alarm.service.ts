@@ -34,4 +34,12 @@ export class AlarmService {
       });
     });
   }
+
+  addAlarm(): void {
+    const alarm = {time: "00:00"};
+    const key = firebase.database().ref('alarms').push().key;
+    let updates = {};
+    updates['alarms/' + key] = alarm;
+    firebase.database().ref().update(updates);
+  }
 }

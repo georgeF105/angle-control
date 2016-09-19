@@ -1,3 +1,8 @@
 <div class="alarms">
   <alarm-card *ngFor="let alarm of alarms" [alarm]="alarm" (click)="onSelect(alarm)"></alarm-card>
+  <div class="new-alarm">
+    <button class="mdl-button mdl-js-button mdl-button--fab" (click)="addAlarm()">
+      <i class="material-icons">add</i>
+    </button>
+  </div>
 </div>

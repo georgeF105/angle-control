@@ -27,4 +27,8 @@ export class AlarmsComponent implements OnInit {
   onSelect(alarm: Alarm): void {
     this.selectedAlarm = alarm;
   }
+
+  addAlarm(): void {
+    this.alarmService.addAlarm();
+  }
 }
