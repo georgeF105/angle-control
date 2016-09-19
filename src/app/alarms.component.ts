@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
 
 import '../../public/css/styles.css';
 import { Alarm } from './alarm';
@@ -14,7 +15,7 @@ import { AlarmService } from './alarm.service';
 export class AlarmsComponent implements OnInit {
   alarms: Alarm[];
   selectedAlarm: Alarm;
-  public subscription: Subscription<Alarm[]>;
+  public subscription: Subscription; // Subscription<Alarm[]>; <- error TS2315: Type 'Subscription' is not generic
 
   constructor(private alarmService: AlarmService) { }
 

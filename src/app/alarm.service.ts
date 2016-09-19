@@ -9,10 +9,10 @@ import { Alarm } from './alarm';
 
 export class AlarmService {
   getAlarms(): Observable<Alarm[]> {
-    return Observable.create(observer => {
+    return Observable.create((observer:any) => {
       firebase.database().ref('alarms').on('value', snapshot => {
         let data = convertObjToArr(snapshot.val());
-        data = data.map(alarm => {
+        data = data.map((alarm:Alarm) => {
           alarm.toggle = () => {
             let updates = {};
             updates['alarms/' + alarm.id + '/on'] = !alarm.on;

@@ -1,5 +1,5 @@
 export default function convertObjToArr (objects: Object) {
-  let arr = [];
+  let arr:any = [];
   for (let key in objects) {
     const object = objects[key];
     object.id = key;

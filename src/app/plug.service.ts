@@ -9,10 +9,10 @@ import { Plug } from './plug';
 
 export class PlugService {
   getPlugs(): Observable<Plug[]> {
-    return Observable.create(observer => {
+    return Observable.create((observer:any) => {
       firebase.database().ref('plugs').on('value', snapshot => {
         let data = convertObjToArr(snapshot.val());
-        data = data.map(plug => {
+        data = data.map((plug:Plug) => {
           plug.toggle = () => {
             let updates = {};
             updates['plugs/' + plug.id + '/on'] = !plug.on;

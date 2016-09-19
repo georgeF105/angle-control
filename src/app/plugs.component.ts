@@ -15,7 +15,7 @@ import { Subscription } from 'rxjs/Subscription';
 export class PlugsComponent implements OnInit {
   plugs: Plug[];
   selectedPlug: Plug;
-  public subscription: Subscription<Plug[]>;
+  public subscription: Subscription; // Subscription<Alarm[]>; <- error TS2315: Type 'Subscription' is not generic
 
   constructor(private plugService: PlugService) { }
 
