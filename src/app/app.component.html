@@ -6,7 +6,8 @@
       <nav class="mdl-navigation">
         <a class="mdl-navigation__link" routerLink="/plugs">Plugs</a>
         <a class="mdl-navigation__link" routerLink="/alarms">Alarms</a>
-        <button *ngIf="!loggedIn" class="mdl-button mdl-js-button">LOGIN</button>
+        <button *ngIf="!loggedIn" class="mdl-button mdl-js-button" (click)="logIn()">LOGIN</button>
+        <button *ngIf="loggedIn" class="mdl-button mdl-js-button" (click)="logOut()">Hi {{userName}}</button>
       </nav>
     </div>
   </header>

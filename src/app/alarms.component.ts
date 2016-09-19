@@ -15,8 +15,6 @@ export class AlarmsComponent implements OnInit {
   alarms: Alarm[];
   selectedAlarm: Alarm;
   public subscription: Subscription<Alarm[]>;
-  loggedIn = false;
-  userName: string;
 
   constructor(private alarmService: AlarmService) { }
 
