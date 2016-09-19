@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as Firebase from 'firebase';
 
 import { firebase } from '../firebaseConfig'
