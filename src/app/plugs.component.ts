@@ -22,7 +22,6 @@ export class PlugsComponent implements OnInit {
   ngOnInit(): void {
     this.subscription = this.plugService.getPlugs().subscribe(plugs => {
       this.plugs = plugs
-      console.log('plugs in component', this.plugs)
     })
   }
 
