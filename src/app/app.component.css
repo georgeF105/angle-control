@@ -1,2 +1,15 @@
 nav {
 }
+
+.mdl-layout__header-row {
+  padding: 0px 80px;
+}
+
+.tab-bar {
+  flex-grow: 1;
+  align-items: flex-end;
+}
+
+.mdl-layout__tab {
+  flex-grow: 1;
+}
