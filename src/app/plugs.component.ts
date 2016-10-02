@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 
 import '../../public/css/styles.css';
 import { Plug } from './plug';
@@ -15,13 +15,13 @@ import { Subscription } from 'rxjs/Subscription';
 export class PlugsComponent implements OnInit {
   plugs: Plug[];
   selectedPlug: Plug;
-  public subscription: Subscription; // Subscription<Alarm[]>; <- error TS2315: Type 'Subscription' is not generic
+  public subscription: Subscription; // <- error TS2315: Type 'Subscription' is not generic
 
-  constructor(private plugService: PlugService) { }
+  constructor(private zone:NgZone, private plugService: PlugService) { }
 
   ngOnInit(): void {
     this.subscription = this.plugService.getPlugs().subscribe(plugs => {
-      this.plugs = plugs
+      this.zone.run(() => this.plugs = plugs);
     })
   }
 

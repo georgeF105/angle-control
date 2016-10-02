@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 import '../../public/css/styles.css';
@@ -17,11 +17,11 @@ export class AlarmsComponent implements OnInit {
   selectedAlarm: Alarm;
   public subscription: Subscription; // Subscription<Alarm[]>; <- error TS2315: Type 'Subscription' is not generic
 
-  constructor(private alarmService: AlarmService) { }
+  constructor(private zone:NgZone, private alarmService: AlarmService) { }
 
   ngOnInit(): void {
     this.subscription = this.alarmService.getAlarms().subscribe(alarms => {
-      this.alarms = alarms
+      this.zone.run(() => this.alarms = alarms);
     })
   }
 
