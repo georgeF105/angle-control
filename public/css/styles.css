@@ -6,7 +6,14 @@ body {
   display: flex;
   flex-direction: row;
   width: 100%;
-  margin: 15px;
+  margin: 15px 0px;
+}
+
+.card-container {
+  max-width: 1050px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 15px;
 }
 
 .hide {
