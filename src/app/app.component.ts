@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as Firebase from 'firebase';
 
+import '../../public/css/styles.css';
+import '../../public/css/normalize.css';
 import { firebase } from '../firebaseConfig'
 
 @Component({
